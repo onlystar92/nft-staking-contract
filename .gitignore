@@ -1,0 +1,16 @@
+/node_modules/
+/build/
+
+node_modules
+
+#Buidler files
+cache
+artifacts
+coverage
+coverage.json
+
+# Env files
+.env
+
+# Merged contracts
+/merged_contracts

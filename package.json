@@ -1,0 +1,45 @@
+{
+  "name": "drops-nft-staking",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "ganache": "ganache-cli -p 8545 -i 666 -d",
+    "migrate": "truffle migrate --network rinkeby --reset",
+    "compile": "truffle compile --network rinkeby",
+    "test": "truffle test --network test",
+    "coverage": "npx builder coverage",
+    "merge": "sol-merger \"./contracts/**/*.sol\" ./merged_contracts",
+    "deploy:rinkeby": "truffle compile && truffle migrate --network rinkeby",
+    "deploy:mainnet": "truffle compile && truffle migrate --network mainnet",
+    "verify:rinkeby": "truffle run verify MasterChef --network rinkeby",
+    "verify:mainnet": "truffle run verify MasterChef --network mainnet"
+  },
+  "dependencies": {
+    "@chainlink/contracts": "^0.1.7",
+    "@openzeppelin/contracts": "^3.4.1",
+    "@openzeppelin/contracts-upgradeable": "^3.4.1",
+    "@openzeppelin/test-helpers": "^0.5.6",
+    "@openzeppelin/truffle-upgrades": "^1.3.1",
+    "@pancakeswap/pancake-swap-lib": "^0.0.1",
+    "@truffle/hdwallet-provider": "^1.2.2",
+    "dotenv": "^8.2.0",
+    "eth-gas-reporter": "^0.2.22",
+    "sol-merger": "^3.1.0",
+    "truffle": "^5.2.6",
+    "truffle-flattener": "^1.5.0"
+  },
+  "devDependencies": {
+    "@nomiclabs/buidler": "^1.4.7",
+    "@nomiclabs/buidler-ethers": "^2.0.0",
+    "@nomiclabs/buidler-truffle5": "^1.3.4",
+    "@nomiclabs/buidler-waffle": "^2.0.0",
+    "@nomiclabs/buidler-web3": "^1.3.4",
+    "chai": "^4.2.0",
+    "ethereum-waffle": "^3.0.0",
+    "ethers": "^5.0.14",
+    "solidity-coverage": "^0.7.13",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "truffle-plugin-verify": "^0.5.7",
+    "web3": "^1.3.0"
+  }
+}
