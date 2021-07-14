@@ -68,11 +68,11 @@ module.exports = {
       skipDryRun: true
     },
     mainnet: {
-      provider: () => new HDWalletProvider(process.env.OWNER_PRIVATE_KEY, `https://bsc-dataseed1.binance.org`),
-      network_id: 56,
-      confirmations: 10,
+      provider: () => new HDWalletProvider(process.env.OWNER_PRIVATE_KEY, `https://mainnet.infura.io/v3/226fdec7dba54ede9f1278de3a1432a6`),
+      network_id: 1,
+      confirmations: 1,
       timeoutBlocks: 200000,
-      networkCheckTimeout: 10000000,
+      networkCheckTimeout: 100000000,
       skipDryRun: true
     },
     // Another network with more advanced options...
