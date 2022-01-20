@@ -25,7 +25,7 @@
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 const path = require("path");
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-require('dotenv').config({ path: path.join(__dirname, '.env') });
+require("dotenv").config({ path: path.join(__dirname, ".env") });
 
 module.exports = {
   /**
@@ -46,9 +46,9 @@ module.exports = {
     // options below to some value.
     //
     development: {
-      host: "127.0.0.1",     // Localhost (default: none)
-      port: 7545,            // Standard Ethereum port (default: none)
-      network_id: "*",       // Any network (default: none)
+      host: "127.0.0.1", // Localhost (default: none)
+      port: 7545, // Standard Ethereum port (default: none)
+      network_id: "*", // Any network (default: none)
     },
     test: {
       host: "127.0.0.1",
@@ -58,22 +58,29 @@ module.exports = {
     },
     testnet: {
       provider: () => {
-        return new HDWalletProvider(process.env.OWNER_PRIVATE_KEY, `https://data-seed-prebsc-2-s1.binance.org:8545/`)
+        return new HDWalletProvider(
+          process.env.OWNER_PRIVATE_KEY,
+          `https://data-seed-prebsc-2-s1.binance.org:8545/`
+        );
       },
       network_id: 97,
       confirmations: 1,
       timeoutBlocks: 2000000,
       networkCheckTimeout: 100000000,
       disableConfirmationListener: true,
-      skipDryRun: true
+      skipDryRun: true,
     },
     mainnet: {
-      provider: () => new HDWalletProvider(process.env.OWNER_PRIVATE_KEY, `https://mainnet.infura.io/v3/226fdec7dba54ede9f1278de3a1432a6`),
+      provider: () =>
+        new HDWalletProvider(
+          process.env.OWNER_PRIVATE_KEY,
+          `https://mainnet.infura.io/v3/226fdec7dba54ede9f1278de3a1432a6`
+        ),
       network_id: 1,
       confirmations: 1,
       timeoutBlocks: 200000,
       networkCheckTimeout: 100000000,
-      skipDryRun: true
+      skipDryRun: true,
     },
     // Another network with more advanced options...
     // advanced: {
@@ -88,7 +95,10 @@ module.exports = {
     // NB: It's important to wrap the provider as a function.
     rinkeby: {
       provider: () => {
-        return new HDWalletProvider(process.env.OWNER_PRIVATE_KEY, `https://rinkeby.infura.io/v3/226fdec7dba54ede9f1278de3a1432a6`)
+        return new HDWalletProvider(
+          process.env.OWNER_PRIVATE_KEY,
+          `https://rinkeby.infura.io/v3/226fdec7dba54ede9f1278de3a1432a6`
+        );
       },
       network_id: 4,
       confirmations: 1,
@@ -98,12 +108,16 @@ module.exports = {
       skipDryRun: true
     },
     ropsten: {
-      provider: () => new HDWalletProvider(process.env.OWNER_PRIVATE_KEY, `https://ropsten.infura.io/v3/YOUR-PROJECT-ID`),
-      network_id: 3,       // Ropsten's id
-      gas: 5500000,        // Ropsten has a lower block limit than mainnet
-      confirmations: 2,    // # of confs to wait between deployments. (default: 0)
-      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
-      skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+      provider: () =>
+        new HDWalletProvider(
+          process.env.OWNER_PRIVATE_KEY,
+          `https://ropsten.infura.io/v3/YOUR-PROJECT-ID`
+        ),
+      network_id: 3, // Ropsten's id
+      gas: 5500000, // Ropsten has a lower block limit than mainnet
+      confirmations: 2, // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 200, // # of blocks before a deployment times out  (minimum/default: 50)
+      skipDryRun: true, // Skip dry run before migrations? (default: false for public nets )
     },
     // Useful for private networks
     // private: {
@@ -112,12 +126,10 @@ module.exports = {
     // production: true    // Treats this network as if it was a public net. (default: false)
     // }
   },
-  plugins: [
-    'truffle-plugin-verify'
-  ],
+  plugins: ["truffle-plugin-verify"],
   // Set default mocha options here, use special reporters etc.
   mocha: {
-    reporter: 'eth-gas-reporter',
+    reporter: "eth-gas-reporter",
   },
 
   // Configure your compilers
